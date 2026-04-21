@@ -7,4 +7,4 @@ resources:
   - ingress-www.yaml
 images:
   - name: registry.144.91.77.245.sslip.io/dokploy-fleet-onyxai-onyxai
-    newTag: bootstrap
+    newTag: a156a10c73d6df821d0ae1208a067010c0821eb3

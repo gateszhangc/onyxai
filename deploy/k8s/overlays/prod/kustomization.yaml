@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ingress.yaml
+  - ingress-preview.yaml
+  - ingress-www.yaml
+images:
+  - name: registry.144.91.77.245.sslip.io/dokploy-fleet-onyxai-onyxai
+    newTag: bootstrap

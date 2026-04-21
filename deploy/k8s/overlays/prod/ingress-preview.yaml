@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: onyxai-preview
+  labels:
+    dokploy-fleet/project: onyxai
+  annotations:
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/issue-temporary-certificate: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Robots-Tag "noindex, nofollow" always;
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - secretName: onyxai-preview-tls
+      hosts:
+        - onyxai.144.91.77.245.sslip.io
+  rules:
+    - host: onyxai.144.91.77.245.sslip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: onyxai
+                port:
+                  number: 80

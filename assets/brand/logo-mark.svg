@@ -1,0 +1,58 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#08090D"/>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bg)" stroke="url(#border)" stroke-width="2"/>
+  <path
+    d="M256 96L352 152V264L256 416L160 264V152L256 96Z"
+    fill="url(#core)"
+    stroke="url(#coreBorder)"
+    stroke-width="6"
+    stroke-linejoin="round"
+  />
+  <path d="M256 128L320 166V246L256 352L192 246V166L256 128Z" fill="#0F131A" stroke="url(#inner)" stroke-width="4"/>
+  <path d="M256 164L292 186V236L256 296L220 236V186L256 164Z" fill="url(#spark)"/>
+  <path d="M176 332C212 294.667 238.667 276 256 276C273.333 276 300 294.667 336 332" stroke="url(#trail)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="176" stroke="url(#orbit)" stroke-width="4" stroke-dasharray="12 18"/>
+  <circle cx="256" cy="256" r="120" stroke="url(#orbitSoft)" stroke-width="2" stroke-dasharray="8 16"/>
+  <defs>
+    <linearGradient id="bg" x1="92" y1="64" x2="420" y2="444" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11151D"/>
+      <stop offset="1" stop-color="#090A0E"/>
+    </linearGradient>
+    <linearGradient id="border" x1="256" y1="16" x2="256" y2="496" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#ED9A63" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="core" x1="164" y1="104" x2="352" y2="384" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17222D"/>
+      <stop offset="0.55" stop-color="#0C1016"/>
+      <stop offset="1" stop-color="#121A23"/>
+    </linearGradient>
+    <linearGradient id="coreBorder" x1="256" y1="96" x2="256" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5"/>
+      <stop offset="1" stop-color="#ED9A63"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="256" y1="128" x2="256" y2="352" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ED9A63" stop-opacity="0.42"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="256" y1="164" x2="256" y2="296" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3ECE3"/>
+      <stop offset="0.46" stop-color="#7FE1D5"/>
+      <stop offset="1" stop-color="#ED9A63"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="176" y1="332" x2="336" y2="332" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5"/>
+      <stop offset="1" stop-color="#ED9A63"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="80" y1="256" x2="432" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5" stop-opacity="0.1"/>
+      <stop offset="0.5" stop-color="#F3ECE3" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ED9A63" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="orbitSoft" x1="136" y1="256" x2="376" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FE1D5" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#7FE1D5" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#ED9A63" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

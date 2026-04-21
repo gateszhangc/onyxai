@@ -1,5 +1,4 @@
 node_modules/
+.DS_Store
 playwright-report/
 test-results/
-.DS_Store
-scripts/__pycache__/

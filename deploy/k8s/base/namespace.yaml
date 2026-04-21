@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: onyxai
+  labels:
+    app.kubernetes.io/name: onyxai
+    app.kubernetes.io/part-of: onyxai
+    dokploy-fleet/project: onyxai

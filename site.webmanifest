@@ -1,11 +1,12 @@
 {
-  "name": "Artemis II Wallpaper",
-  "short_name": "Artemis II",
-  "description": "Independent editorial collection of Artemis II wallpapers using publicly released NASA imagery with source credit.",
+  "name": "OnyxAI",
+  "short_name": "OnyxAI",
+  "description": "OnyxAI is an AI memory assistant for conversations, ideas, and fast recall.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#050912",
-  "theme_color": "#050912",
+  "background_color": "#08090d",
+  "theme_color": "#08090d",
   "icons": [
     {
       "src": "/assets/brand/favicon.png",

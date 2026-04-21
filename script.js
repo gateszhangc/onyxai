@@ -1,41 +1,52 @@
-const topbar = document.querySelector("[data-topbar]");
-const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
-const wallpaperCards = Array.from(document.querySelectorAll(".wallpaper-card"));
-const resultsCount = document.querySelector("[data-results-count]");
-const yearNode = document.querySelector("#current-year");
+const waitlistForm = document.querySelector("[data-waitlist-form]");
+const revealNodes = document.querySelectorAll("[data-reveal]");
 
-const updateResults = (filter) => {
-  let visible = 0;
+const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-  wallpaperCards.forEach((card) => {
-    const tags = (card.dataset.tags || "").split(" ");
-    const matches = filter === "all" || tags.includes(filter);
-    card.hidden = !matches;
-    if (matches) visible += 1;
-  });
-
-  if (resultsCount) {
-    resultsCount.textContent = `Showing ${visible} wallpaper${visible === 1 ? "" : "s"}`;
+const setFormState = (state, message) => {
+  if (!waitlistForm) {
+    return;
   }
+
+  const messageNode = waitlistForm.querySelector("[data-form-message]");
+  waitlistForm.dataset.state = state;
+  messageNode.textContent = message;
 };
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach((entry) => entry.classList.remove("is-active"));
-    button.classList.add("is-active");
-    updateResults(button.dataset.filter || "all");
-  });
-});
+if (waitlistForm) {
+  const emailInput = waitlistForm.querySelector('input[name="email"]');
 
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
+  waitlistForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      setFormState("error", "Enter an email to preview the waitlist flow.");
+      emailInput.focus();
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setFormState("error", "Use a valid email address.");
+      emailInput.focus();
+      return;
+    }
+
+    setFormState(
+      "success",
+      "Waitlist opening soon. This demo page does not store your address yet."
+    );
+    waitlistForm.reset();
+  });
+
+  emailInput.addEventListener("input", () => {
+    if (waitlistForm.dataset.state === "error") {
+      setFormState("idle", "No address is stored from this page yet.");
+    }
+  });
 }
 
-const handleScroll = () => {
-  if (!topbar) return;
-  topbar.classList.toggle("is-scrolled", window.scrollY > 12);
-};
-
-window.addEventListener("scroll", handleScroll, { passive: true });
-handleScroll();
-updateResults("all");
+for (const node of revealNodes) {
+  node.classList.add("is-visible");
+}

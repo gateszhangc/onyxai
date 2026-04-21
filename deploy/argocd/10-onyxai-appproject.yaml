@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: onyxai
+  namespace: argocd
+spec:
+  description: onyxai application managed from the application repository
+  sourceRepos:
+    - https://github.com/gateszhangc/onyxai.git
+  destinations:
+    - namespace: onyxai
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

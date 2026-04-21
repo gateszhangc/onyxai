@@ -6,4 +6,4 @@ resources:
   - ingress-preview.yaml
 images:
   - name: registry.144.91.77.245.sslip.io/dokploy-fleet-onyxai-onyxai
-    newTag: a156a10c73d6df821d0ae1208a067010c0821eb3
+    newTag: fb9bff07b2ece6cc6ba8e122e1a7d6cc5c741c91
